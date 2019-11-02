@@ -4,23 +4,11 @@ import bean.User;
 import dao.UserDao;
 
 public class UserBO {
-	private User user;
-	
-	public UserBO() {
-		super();
-	}
-	
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
 
 	public boolean validate(String username, String pass) {
-		setUser(UserDao.getUser(username));
-		if (this.user != null) {
+		User user = UserDao.getUser(username);
+		System.out.println(user);
+		if (user != null) {
 			if (user.getUserPass().equals(pass)) {
 				return true;
 			}

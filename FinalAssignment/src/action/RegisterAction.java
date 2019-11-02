@@ -26,6 +26,7 @@ public class RegisterAction extends ActionSupport implements ModelDriven<User>{
 	
 	public String execute() {
 		UserBO userbo = new UserBO();
+		System.out.print(this.user);
 		if(userbo.validateRegister(user)) {
 			System.out.println(user);
 			return "success";

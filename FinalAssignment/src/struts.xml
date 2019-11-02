@@ -14,7 +14,7 @@
         	<result name="failed">/View/Register.jsp</result>
         </action>
         
-        <action name="login">
+        <action name="login" class="action.LoginAction" method="execute">
         	<result name="success">/View/Mainpage.jsp</result>
         	<result name="failed">/View/FailedLogin.jsp</result>
         </action>

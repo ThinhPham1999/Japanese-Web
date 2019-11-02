@@ -22,15 +22,15 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public String getUsername() {
 		return username;
 	}
-	
-	public void setUsername(String usename) {
-		this.username = usename;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	
+
 	public String getPass() {
 		return pass;
 	}
-	
+
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
@@ -40,6 +40,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	}
 	
 	public String execute() {
+		System.out.println(username);
+		System.out.println(pass);
 		UserBO userbo = new UserBO();
 		if (userbo.validate(username, pass)) {
 			this.sessionmap.put("username", username);

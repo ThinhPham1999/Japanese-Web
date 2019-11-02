@@ -55,8 +55,9 @@ public class UserDao {
             return user;
 		}catch(Exception ex) {
 			Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
+            
 		}
+		return null;
 	}
 	
 	public static boolean updateUser(User user){
