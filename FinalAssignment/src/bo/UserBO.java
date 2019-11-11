@@ -1,9 +1,21 @@
 package bo;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 import bean.User;
 import dao.UserDao;
 
-public class UserBO {
+public class UserBO implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public UserBO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public boolean validate(String username, String pass) {
 		User user = UserDao.getUser(username);
@@ -22,5 +34,22 @@ public class UserBO {
 		}
 		UserDao.addUser(user);
 		return true;
+	}
+	
+	public int getUserID(String username) {
+		User user = UserDao.getUser(username);
+		return user.getUserID();
+	}
+	
+	public ArrayList<User> listAll(){
+		return UserDao.getAll();
+	}
+	
+	public User getUser(int ID) {
+		return UserDao.getUserByID(ID);
+	}
+	
+	public boolean update(User user) {
+		return UserDao.updateUser(user);
 	}
 }

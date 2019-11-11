@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Student login successful</h1>
+	<h1>Teacher login successful</h1>
 	<s:url id="view" action="viewUpdate"></s:url>
 	<s:a href="%{view}">
 		<input type="submit" value="Update"/>

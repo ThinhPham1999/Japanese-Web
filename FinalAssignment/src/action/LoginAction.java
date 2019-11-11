@@ -7,6 +7,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import bean.User;
 import bo.UserBO;
 
 public class LoginAction extends ActionSupport implements SessionAware{
@@ -40,14 +41,21 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	}
 	
 	public String execute() {
-		System.out.println(username);
-		System.out.println(pass);
 		UserBO userbo = new UserBO();
 		if (userbo.validate(username, pass)) {
-			this.sessionmap.put("username", username);
-			return "success";
+			User user = userbo.getUser(userbo.getUserID(username));
+			System.out.println(user);
+			this.sessionmap.put("userID", user.getUserID());
+			if (user.getPermission() == 2) return "success";
+			if (user.getPermission() == 1) return "succesTeacher";
+			if (user.getPermission() == 0) return "successAdmin";
 		}
 		return "failed";
+	}
+	
+	public String logout() {
+		sessionmap.remove("customerID");
+		return "success";
 	}
 
 	@Override
