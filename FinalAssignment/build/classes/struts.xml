@@ -40,5 +40,10 @@
    		<action name="logout" class="action.LoginAction" method="logout">
    			<result name="success">/View/Login.jsp</result>
    		</action>
+   		
+   		<action name="changePassword" class="action.ChangePassword" method="execute">
+   			<result name="success">/View/ChangePassword.jsp</result>
+   			<result name="failed">/View/ChangePasswordFailed.jsp</result>
+   		</action>
     </package>
 </struts>

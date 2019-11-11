@@ -13,6 +13,7 @@
 	<s:a href="%{view}">
 		<input type="submit" value="Update"/>
 	</s:a>
+	<a href="/FinalAssignment/View/ChangePassword.jsp">Change password</a>
 	<a href="logout">Logout</a>
 </body>
 </html>
