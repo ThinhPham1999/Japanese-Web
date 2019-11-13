@@ -14,7 +14,7 @@
 <title>Register</title>
 </head>
 <body>
-	<s:form action="update" namespace="/" method="post"  theme="bootstrap" cssClass="well form-vertical">
+	<s:form action="register" namespace="/" method="post"  theme="bootstrap" cssClass="well form-vertical">
 			<s:hidden name="userID"></s:hidden>
 			<s:textfield name="userName" label="Username" ></s:textfield>
 			<s:password name="userPass" label="Password"></s:password>
